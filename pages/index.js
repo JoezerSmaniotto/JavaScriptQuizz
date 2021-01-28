@@ -1,29 +1,29 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
-import {useRouter} from 'next/router';
-
+import { useRouter } from 'next/router';
 
 import db from '../db.json';
 import Widget from '../src/components/Widget';
-import QuizLogo from '../src/components/QuizLogo'
+import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-// import Cabecalho from '../src/components/Cabecalho';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
 
+// eslint-disable-next-line no-unused-vars
 const Title = styled.h1`
   font-size: 50px;
   color: ${({ theme }) => theme.colors.primary};
-  
-// `
+`;
+
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
 //   flex:1;
 //   background-size: cover;
 //   background-position: center;
 // `;
-
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -36,63 +36,58 @@ export const QuizContainer = styled.div`
   }
 `;
 
-
-
-
 export default function Home() {
   const router = useRouter();
   const [name, setName] = useState('');
-  
+
   console.log(name);
-  return(
+  return (
     <>
-      
-      <QuizBackground  backgroundImage={db.bg}>
+
+      <QuizBackground backgroundImage={db.bg}>
         <Head>
           <title>JS - Quizz</title>
-          /* <meta property="og:image" content={db.bg}></meta> */
+
         </Head>
         <QuizContainer>
-          <QuizLogo/>
+          <QuizLogo />
           <Widget>
             <Widget.Header>
               <h1>The Legend of Zelda </h1>
             </Widget.Header>
             <Widget.Content>
-              <form onSubmit={function(e){
+              <form onSubmit={(e) => {
                 e.preventDefault();
-               
-                
-                router.push(`/quiz?name=${name}`)
-                console.log('Fazendo uma submissão por meio do react')
+                router.push(`/quiz?name=${name}`);
               }}
               >
-               <input
-                onChange={function(e){
-                  console.log(e.target.value);
-                  setName(e.target.value);
-                }}
-                placeholder="Informe seu nome" />
-               <button type="submit" disabled={name.length === 0}>Jogar {name}</button>
-              </form> 
+
+                <Input
+                  name="nomeDoUsuario"
+                  onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
+                  placeholder="Diz ai seu nome"
+                  value={name}
+                />
+                <Button type="submit" disabled={name.length === 0}>
+                  {`Jogar ${name}`}
+                </Button>
+
+              </form>
             </Widget.Content>
           </Widget>
 
           <Widget>
-              <Widget.Header>
-                <h1>The Legend of Zelda22 </h1>
-              </Widget.Header>
-              <Widget.Content>
-                <p>Loren ipsum sdfdfdfd sdfd sdfdfd</p>
-              </Widget.Content>
+            <Widget.Header>
+              <h1>The Legend of Zelda22 </h1>
+            </Widget.Header>
+            <Widget.Content>
+              <p>Loren ipsum sdfdfdfd sdfd sdfdfd</p>
+            </Widget.Content>
           </Widget>
-          <Footer/>
+          <Footer />
         </QuizContainer>
         <GitHubCorner projectUrl="https://github.com/JoezerSmaniotto" />
       </QuizBackground>
-  </>
+    </>
   );
-  
-  
-  <Title>My page</Title>
 }
