@@ -1,28 +1,56 @@
 {
   "bg": "https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "title": "JavaScript Quizz ",
+  "description": "Teste os seus conhecimentos sobre JS e vamos ver quantos Uncaught 'ReferenceError' vc consegue, hahaha",
   "questions": [
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
+      "title": "Inside which HTML element do we put the JavaScript?",
       "description": "Essa é pra aquecer",
-      "answer": 2,
+      "answer": 3,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "<javascript>",
+        "<js>",
+        "<scripting>",
+        "<script>"
       ]
     },
     {
       "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
+      "title": "How to write an IF statement in JavaScript?",
+      "description": "Faz tempo em haha",
+      "answer": 2,
+      "alternatives": [
+         "if i = 5 then",
+         "if i == 5 then",
+         "if (i == 5)",
+         "if i = 5"
+
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "title": "Where is the correct place to insert a JavaScript?",
+      "description": "Essa é pra aquecer",
+      "answer": 2,
+      "alternatives": [
+        "The <head> section",
+        "The <footer>",
+        "Both the <head> section and the <body> section are correct",
+        "<script>",
+        "The <body> section"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "How do you create a function in JavaScript?",
       "description": "Faz tempo em haha",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "function myFunction()",
+         "function = myFunction()",
+         "function:myFunction()"
+
       ]
     }
   ],
